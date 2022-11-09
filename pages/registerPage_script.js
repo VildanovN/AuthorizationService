@@ -41,7 +41,7 @@ let formObject = {
 				unit.$el.querySelector('select').blur();
 			}
 		} else {
-			axios.post("http://localhost:3000/register", {
+			axios.post("register", {
 				"username": emailForm.email,
 				"password": passwordForm.password
 			})

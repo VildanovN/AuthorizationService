@@ -48,7 +48,7 @@ function logout() {
 };
 
 function refreshTokens() {
-  return axios.get('http://localhost:3000/refresh', { headers: {"Authorization" : `Bearer ${localStorage.getItem('refreshToken')}`} })
+  return axios.get('refresh', { headers: {"Authorization" : `Bearer ${localStorage.getItem('refreshToken')}`} })
     .then(response => {
       localStorage.setItem('accessToken', response.data.access_token);
       localStorage.setItem('refreshToken', response.data.refresh_token);
@@ -56,7 +56,7 @@ function refreshTokens() {
 };
 
 function receiveData() {
-  return axiosApiInstance.get("http://localhost:3000/profile", { headers: {"Authorization" : `Bearer ${localStorage.getItem('accessToken')}`} })
+  return axiosApiInstance.get("profile", { headers: {"Authorization" : `Bearer ${localStorage.getItem('accessToken')}`} })
     .then(response => {
       nameForm.name = response.data.name;
       phoneForm.phone = response.data.phone;
@@ -66,7 +66,7 @@ function receiveData() {
 }
 
 function sendChanges() {
-  axiosApiInstance.post('http://localhost:3000/profile', 
+  axiosApiInstance.post('profile', 
     { "name": nameForm.name,
       "phone": phoneForm.phone,
       "address": addressForm.address,

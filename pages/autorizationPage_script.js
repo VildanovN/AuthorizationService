@@ -21,13 +21,13 @@ function sendToProfile() {
 };
 
 function sendPost() {
-  axios.post("http://localhost:3000/auth/login", {"username": emailForm.email, "password": passwordForm.password})
+  axios.post("auth/login", {"username": emailForm.email, "password": passwordForm.password})
     .then(response => {
       localStorage.setItem('accessToken', response.data.access_token);
       localStorage.setItem('refreshToken', response.data.refresh_token);
       sendToProfile();
     });
-    //.then(response => axios.get("http://localhost:3000/profile", { headers: {"Authorization" : `Bearer ${response.data.access_token}`} })
+    //.then(response => axios.get("profile", { headers: {"Authorization" : `Bearer ${response.data.access_token}`} })
 };
 
 let showNotification = function() {
