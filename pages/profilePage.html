@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<title>Test task 1</title>
+	<link rel="stylesheet" href="page_style.css">
+  </head>
+  <body class="page">
+	<main class="page__main">
+	  <div class="page__content">
+	    <form class="form page__form">
+		  <div class="form__section">
+		    <h3 class="form__header">Profile</h3>
+		    <div class="form__block" id="form__name">
+		      <p>Name</p>
+		      <input type="text" v-model.lazy="name" class="form__input">
+		    </div>
+		    <div class="form__block" id="form__phone">
+		      <p>Phone number</p>
+		      <input type="tel" v-model.lazy="phone" class="form__input">
+		    </div>
+		    <div class="form__block" id="form__address">
+		      <p>Address</p>
+		      <input type="text" v-model.lazy="address" class="form__input">
+		    </div>
+		    <div class="form__block" id="form__aboutMe">
+		      <p>About me</p>
+		      <input type="text" v-model.lazy="aboutMe" class="form__input">
+		    </div>
+		  </div>
+		  <div class="form__section form__section_row">
+		    <button class="form__button" id="form__button_auth">Log out</button>
+		    <button class="form__button form__button_right">Save changes</button>
+		  </div>
+		</form>
+	  </div>  
+		<div class="notification-window">
+			<div class="page__content page__content_window">
+				<img class="notification-window__image" src="submit-image.png">
+				<h3 class="notification-window__text">Успешная регистрация</h3>
+			</div>
+		</div>
+	</main>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="profilePage_script.js"></script>
+  </body>
+</html>
